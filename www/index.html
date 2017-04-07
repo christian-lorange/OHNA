@@ -14,6 +14,8 @@
         /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
         @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }  @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
         @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }           @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        
+       
     </style>
 
     <!-- Uncomment the following scripts if you convert your "Standard HTML5" project into a "Cordova" project. -->
@@ -24,19 +26,12 @@
     <script language="javascript" src="js/twa_v2.js"></script>
 <script language="javascript" src="js/noise-exposure.js"></script>
 <script type="text/javascript">var nLineCount = 12;</script>
-<link rel="stylesheet" type="text/css" href="occ_v4.css">
-<link href="/nm-itab_v6.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="css/style.css".css>
+
 <!-- sound level meters -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="/nm_v5.css">
-<link rel="stylesheet" type="text/css" href="/nmshop/css/nmshop.css">
 <script type="text/javascript" src="js/utils_v6.js"></script>
-<script type="text/javascript">sReg = "us"; bExport = false; sPage = "/apps/occ/twa-dose.asp"; sUKPage = "/apps/occ/twa-dose.asp"; sEUPage = "/apps/occ/twa-dose.asp"; sProdCur = "usd";</script>
-<script type="text/javascript" src="/menu/nmmenu_v5.js"></script>
-<script type="text/javascript" src="/nmshop/js/nmshop.js"></script>
 <script type="text/javascript" src="js/ajax_v3.js"></script>
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-42645118-13', 'noisemeters.com');ga('send', 'pageview');</script>
-<link rel="icon" type="image/png" href="/icon.png">
 
     
 </head>
@@ -57,13 +52,15 @@
         <div id="divProdMore">
 <div id="divRegs">
         <form name="formRegs" method="post" action="">
-          Regulations: 
-          <label><input type="radio" name="radRegs" value="osha" checked onClick="SetRegs()">OSHA</label>
-          <label><input type="radio" name="radRegs" value="niosh" onClick="SetRegs()">NIOSH</label>
+          Regulations: <br>
+         
+          <label><input type="radio" name="radRegs" value="osha" checked onClick="SetRegs()">OSHA</label><br>
+          <label><input type="radio" name="radRegs" value="niosh" onClick="SetRegs()">NIOSH</label><br>
           <!--<label><input type="radio" name="radRegs" value="dod3" onClick="SetRegs()">DOD 3dB</label>
           <label><input type="radio" name="radRegs" value="dod4" onClick="SetRegs()">DOD 4dB</label>-->
           <!-- <label><input type="radio" name="radRegs" value="eu" onClick="SetRegs()">Europe</label>-->
           <label><input type="radio" name="radRegs" value="custom" onClick="SetRegs()">Custom</label>
+            
         </form>
         </div>
           <div id="divParams" class="params">
@@ -103,99 +100,99 @@
             dB</label>
           </div>
           <form action="twa-repgen.asp" method="post" name="formNaw" id="formNaw" onSubmit="return CheckSubmit();">
-            <table class="tblTwa" border="0" cellspacing="0" cellpadding="0">
+            <table class="tblTwa" >
               <tr>
                 <!-- <td><strong>Location</strong></td> -->
-                <td width="200"><div style="cursor:help" onClick="help('level')"><strong>Sound Level</strong></div></td>
-                <td width="200"><div style="cursor:help" onClick="help('exptime')"><strong>Exposure<br>
+                <td ><div onClick="help('level')"><strong>Sound Level</strong></div></td>
+                <td ><div onClick="help('exptime')"><strong>Exposure<br>
                 Time </strong></div></td>
-                <td width="200"><div style="cursor:help" onClick="help('partial')"><strong>Partial</strong></div></td>
-                <td width="200">&nbsp;</td>
+                <td ><div onClick="help('partial')"><strong>Partial</strong></div></td>
+                <td style="display:none" >&nbsp;</td>
               </tr>
               <tr>
                 <!--<td>&nbsp;</td> -->
-                <td><div style="cursor:help" onClick="help('level')">dB(A)</div></td>
-                <td><div style="cursor:help" onClick="help('exptime')">HH
+                <td><div onClick="help('level')">dB(A)</div></td>
+                <td><div onClick="help('exptime')">HH
                   : MM</div></td>
-                <td><div style="cursor:help" onClick="help('partial')"><strong>Dose</strong> %</div></td>
-                <td>&nbsp;</td>
+                <td><div onClick="help('partial')"><strong>Dose</strong> %</div></td>
+                <td style="display:none">&nbsp;</td>
               </tr>
               <tr>
                <!-- <td>&nbsp;</td> -->
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="display:none">&nbsp;</td>
               </tr>
               
               <tr>
                 <td style="display:none"><input name="fldLocation0" type="text" id="fldLocation0" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td>
-                <td><input name="fldLevel0" type="text" id="fldLevel0" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr0" type="text" pattern="[0-9]*" id="fldTimeHr0" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td><input style="width: 100%;" name="fldLevel0" type="text" id="fldLevel0" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td ><input style="width: 40%;" name="fldTimeHr0" type="text" pattern="[0-9]*" id="fldTimeHr0" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin0" type="text" id="fldTimeMin0" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose0" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose0" type="hidden" id="fldDose0"></td>
+                  <input style="width: 40%;" name="fldTimeMin0" type="text" id="fldTimeMin0" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td ><div id="divDose0"  onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose0" type="hidden" id="fldDose0"></td>
               </tr>
               
               <tr>
-                  <td  style="display:none"><input name="fldLocation1" type="text" id="fldLocation1" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td>
-                <td><input name="fldLevel1" type="text" id="fldLevel1" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr1" type="text" id="fldTimeHr1" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td  style="display:none"><input name="fldLocation1" type="text" id="fldLocation1" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td>
+                <td><input style="width: 100%;" name="fldLevel1" type="text" id="fldLevel1" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td><input style="width: 40%;" name="fldTimeHr1" type="text" id="fldTimeHr1" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin1" type="text" id="fldTimeMin1" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose1" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose1" type="hidden" id="fldDose1"></td>
+                  <input style="width: 40%;" name="fldTimeMin1" type="text" id="fldTimeMin1"  onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td><div id="divDose1" onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose1" type="hidden" id="fldDose1"></td>
               </tr>
               
               <tr>
                 <td  style="display:none"><input name="fldLocation2" type="text" id="fldLocation2" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td>
-                <td><input name="fldLevel2" type="text" id="fldLevel2" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr2" type="text" id="fldTimeHr2" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td><input style="width: 100%;" name="fldLevel2" type="text" id="fldLevel2" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td><input style="width: 40%;" name="fldTimeHr2" type="text" id="fldTimeHr2"  onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin2" type="text" id="fldTimeMin2" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose2" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose2" type="hidden" id="fldDose2"></td>
+                  <input style="width: 40%;" name="fldTimeMin2" type="text" id="fldTimeMin2" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td><div id="divDose2" onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose2" type="hidden" id="fldDose2"></td>
               </tr>
               
               <tr>
                <td  style="display:none"><input name="fldLocation3" type="text" id="fldLocation3" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td> 
-                <td><input name="fldLevel3" type="text" id="fldLevel3" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr3" type="text" id="fldTimeHr3" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td><input style="width: 100%;" name="fldLevel3" type="text" id="fldLevel3" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td><input style="width: 40%;" name="fldTimeHr3" type="text" id="fldTimeHr3" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin3" type="text" id="fldTimeMin3" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose3" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose3" type="hidden" id="fldDose3"></td>
+                  <input style="width: 40%;" name="fldTimeMin3" type="text" id="fldTimeMin3" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td><div id="divDose3"  onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose3" type="hidden" id="fldDose3"></td>
               </tr>
               
               <tr>
                <td  style="display:none"><input name="fldLocation4" type="text" id="fldLocation4" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td> 
-                <td><input name="fldLevel4" type="text" id="fldLevel4" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr4" type="text" id="fldTimeHr4" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td><input style="width: 100%;" name="fldLevel4" type="text" id="fldLevel4"  class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td><input style="width: 40%;" name="fldTimeHr4" type="text" id="fldTimeHr4" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin4" type="text" id="fldTimeMin4" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose4" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose4" type="hidden" id="fldDose4"></td>
+                  <input style="width: 40%;" name="fldTimeMin4" type="text" id="fldTimeMin4"  onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td><div id="divDose4" onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose4" type="hidden" id="fldDose4"></td>
               </tr>
               
               <tr>
                   <td  style="display:none"><input name="fldLocation5" type="text" id="fldLocation5" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td>
-                <td><input name="fldLevel5" type="text" id="fldLevel5" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr5" type="text" id="fldTimeHr5" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td><input style="width: 100%;" name="fldLevel5" type="text" id="fldLevel5"class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td><input style="width: 40%;" name="fldTimeHr5" type="text" id="fldTimeHr5" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin5" type="text" id="fldTimeMin5" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose5" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose5" type="hidden" id="fldDose5"></td>
+                  <input style="width: 40%;" name="fldTimeMin5" type="text" id="fldTimeMin5" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td><div id="divDose5" onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose5" type="hidden" id="fldDose5"></td>
               </tr>
               
               <tr>
              <td  style="display:none"><input name="fldLocation6" type="text" id="fldLocation6" class="twaloc" onFocus="help('location')" onBlur="help('')" maxlength="30"></td> 
-                <td><input name="fldLevel6" type="text" id="fldLevel6" style="width:25%" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
-                <td><input name="fldTimeHr6" type="text" id="fldTimeHr6" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
+                <td><input style="width: 100%;" name="fldLevel6" type="text" id="fldLevel6" class="twalev" placeholder="dB(A)" onFocus="help('level')" onBlur="help('')" onKeyUp="calcdose();" maxlength="5" ></td>
+                <td><input style="width: 40%;" name="fldTimeHr6" type="text" id="fldTimeHr6"  onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" >
                   :
-                  <input name="fldTimeMin6" type="text" id="fldTimeMin6" style="width:25%" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
-                <td><div id="divDose6" style="width:25%" onClick="help('partial')"></div></td>
-                <td><input name="fldDose6" type="hidden" id="fldDose6"></td>
+                  <input style="width: 40%;" name="fldTimeMin6" type="text" id="fldTimeMin6" onFocus="help('exptime')" onBlur="help('')" onKeyUp="calcdose();" value="00" maxlength="2" ></td>
+                <td><div id="divDose6" onClick="help('partial')"></div></td>
+                <td style="display:none"><input style="width: 0px;" name="fldDose6" type="hidden" id="fldDose6"></td>
               </tr>
               
               
@@ -204,17 +201,17 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="display:none">&nbsp;</td>
               </tr>
             </table>
-            <table class="tblTwa" border="0" cellspacing="0" cellpadding="0">
+            <table class="tblTwa">
               <tr>
                 <!-- <td>&nbsp;</td> -->
                 <td width="100">&nbsp;</td>
-                <td width="100"><div style="cursor:help" onClick="help('totalexptime')"><strong>Exposure
+                <td width="100"><div  onClick="help('totalexptime')"><strong>Exposure
                   Time</strong></div></td>
-                <td width="70"><div style="cursor:help" onClick="help('dose')"><strong>Dose</strong></div></td>
-                <td width="70"><div style="cursor:help" onClick="help('twa')"><strong>TWA</strong></div></td>
+                <td width="70"><div onClick="help('dose')"><strong>Dose</strong></div></td>
+                <td width="70"><div onClick="help('twa')"><strong>TWA</strong></div></td>
               </tr>
               <tr>
               <!--  <td>&nbsp;</td> -->
@@ -226,9 +223,9 @@
               <tr>
                <!-- <td>&nbsp;</td> -->
                 <td><strong>Totals</strong></td>
-                <td><div id="divTotalTime" style="cursor:help" onClick="help('totalexptime')"></div></td>
-                <td><div id="divTotalDose" style="cursor:help" onClick="help('dose')"></div></td>
-                <td><div id="divTWA" style="cursor:help" onClick="help('twa')"></div></td>
+                <td><div id="divTotalTime" onClick="help('totalexptime')"></div></td>
+                <td><div id="divTotalDose" onClick="help('dose')"></div></td>
+                <td><div id="divTWA" onClick="help('twa')"></div></td>
               </tr>
             </table>
           <div id="divPrRep">
@@ -241,7 +238,7 @@
           </div>
           </form>
           <p>&nbsp;</p>
-          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <table >
             <tr>
               <td width="120" height="24" valign="top"><strong>Summary</strong></td>
               <td valign="top"><strong>Action Required </strong></td>
