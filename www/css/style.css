@@ -22,6 +22,12 @@ td, th {
 
 .input {width:20px !important};
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* 
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px

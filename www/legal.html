@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Blank Standard HTML5 Web App Template</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }  @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }           @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        
+       
+    </style>
+
+    <!-- Uncomment the following scripts if you convert your "Standard HTML5" project into a "Cordova" project. -->
+    <!-- <script src="cordova.js"></script> -->          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <!-- <script src="js/app.js"></script> -->           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <!-- <script src="xdk/init-dev.js"></script> -->     <!-- normalizes device and document ready events, see README for details -->
+    
+    <script language="javascript" src="js/twa_v2.js"></script>
+<script language="javascript" src="js/noise-exposure.js"></script>
+<script type="text/javascript">var nLineCount = 12;</script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css".css>
+
+<!-- sound level meters -->
+<script type="text/javascript" src="js/utils_v6.js"></script>
+<script type="text/javascript" src="js/ajax_v3.js"></script>
+    
+    <script>
+    document.addEventListener("deviceready", onDeviceReady, true);
+
+             function onDeviceReady()
+             {     
+                   document.addEventListener("backbutton", BackKeyDown, true);
+             }
+
+             function BackKeyDown()
+             {
+                 navigator.notification.alert();
+                 //navigator.app.exitApp();  // For Exit Application
+             }
+    
+    </script>
+
+    
+</head>
+    
+<body>
+    
+    <div>
+    <h1>TERMS, CONDITIONS, AND USER AGREEMENT:</h1>
+<p><b>Updated April 2017 — This policy updates and overrides any pre-existing policies found on any OrangeHouse LLC web properties.</b></p>
+        
+<p><b>Agreement.</b> Use of and access to ORANGEHOUSE LLC's web, database, e-mail, and/or mobile application properties, as well as any related content, regardless of media, is subject to the terms, conditions, and disclaimers set forth below and to all applicable laws and regulations. ORANGEHOUSE LLC reserves the right to modify these disclaimers, terms, and conditions of access without advance notice. This agreement constitutes a binding contract between ORANGEHOUSE LLC and you, the user. By accessing one of ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties, you hereby accept this User Agreement in full. As a material condition of such access and use, you warrant that you are over the age of thirteen and that you have provided complete and accurate information in any communication with ORANGEHOUSE LLC.</p>
+
+    <p><b>Dynamic Database.</b> ORANGEHOUSE LLC’s web, database, and mobile application properties are dynamic. This means that product ratings on any of these properties may change based on evolving science, new information, or other factors, as well as that the contents of e-mail messages and consumer guides may not reflect ORANGEHOUSE LLC's current ratings or evaluations of products. ORANGEHOUSE LLC makes no representations or warranties about any of the products rated on its web, database, and mobile application properties, or products referenced in e-mail messages. ORANGEHOUSE LLC hereby disclaims all warranties with regard to the products rated on its web, database, and mobile application properties, or products referenced in e-mail messages, including express warranties, statutory warranties, implied warranties of merchantability, or warranties of fitness for a particular purpose. ORANGEHOUSE LLC further disclaims all warranties with regard to any products made available to members of the public by ORANGEHOUSE LLC through any of these properties or e-mails, for example (but not limited to) consumer guides, gift bags and their contents, and product sample packs, including express warranties, statutory warranties, implied warranties of merchantability, or warranties of fitness for a particular use.</p>
+
+        <p><b>Accuracy.</b> ORANGEHOUSE LLC has worked to ensure the accuracy of the information it provides through its products and services, including through ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties. The product ratings, images, conclusions, recommendations, and findings that appear on ORANGEHOUSE LLC’s web, database, and mobile application properties, or in e-mail messages, reflect ORANGEHOUSE LLC’s research at the time of publication. Please be advised that this information frequently relies on data obtained from many sources, and accordingly, ORANGEHOUSE LLC cannot guarantee the accuracy of the information provided or any analysis based thereon. Moreover, in light of evolving regulatory and market conditions, subsequent product reformulations, and other factors, this information may no longer be current.</p>
+
+        <p><b>Use.</b>ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties are provided solely for your personal use. You may not develop or derive for commercial sale, or any other use, any data in machine-readable or other form that incorporates or uses any substantial part of ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties, nor transfer to or store any data residing or exchanged over ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties in any electronic network for use by more than one user, unless you obtain prior written permission from ORANGEHOUSE LLC. Specifically, unless explicitly authorized in these terms and conditions, or authorized by prior written agreement with ORANGEHOUSE LLC, you may not modify, copy, reproduce, republish, upload, post, transmit, translate, sell, create derivative works, exploit, or distribute in any manner or medium any material from ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties.</p>
+
+        <p>Reproducing ORANGEHOUSE LLC Materials. ORANGEHOUSE LLC welcomes requests to reproduce ORANGEHOUSE LLC materials, including, but not limited to, articles, reports, blog entries, press releases, videos, images and photos. For more information about sharing ORANGEHOUSE LLC’s work in any medium, including online and in hard copy, please contact info@orangehousellc.com</p>
+
+        <p><b>Copyright. </b>ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties, and all other text and images contained in ORANGEHOUSE LLC's products, are protected by United States trademark and copyright law and/or other applicable law, and are the property of ORANGEHOUSE LLC, except as otherwise identified. All copyrights and trademarks not the property of ORANGEHOUSE LLC that are used or referred to in ORANGEHOUSE LLC’s web, database, mobile application properties, e-mail, and other ORANGEHOUSE LLC products are the property of their respective owners. Nothing contained in the site, e-mail messages, or other products shall be construed as granting any license or other rights to any copyright, trademark, patent, or other property of ORANGEHOUSE LLC or any third-party, whether by implication, laches, estoppel or explicit grant.</p>
+
+            <p><b>Digital Millennium Copyright Act.</b> The Digital Millennium Copyright Act (“DMCA”), as it relates to online service providers, requires removing material that allegedly violates someone’s copyright. ORANGEHOUSE LLC respects others’ intellectual property rights, and reserves the right to delete or disable content alleged to be infringing from ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties and to terminate the accounts of repeat alleged infringers. To learn more about the DMCA, click here.</p>
+
+                <p>If you believe your or someone else’s copyright is being infringed on ORANGEHOUSE LLC’s web, database, or mobile application properties, or in e-mail messages, please contact ORANGEHOUSE LLC by e-mail at info@orangehousellc.com. To provide proper notice, please include in your communication: a physical or electronic signature of a person authorized to act on behalf of the owner(s) of the infringed copyright; identification of the copyrighted work or works you claim have been infringed; identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed; information reasonably sufficient to permit ORANGEHOUSE LLC to contact you (e.g, address, telephone number, and e-mail address); a statement that you have a good faith belief that use of the material is not authorized by the copyright owner(s); and a statement that information in the complaint is accurate and that you are authorized to act on behalf of the copyright owner(s).</p>
+
+                    <p><b>Risk Warning</b> By accessing ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties, you acknowledge that any reliance upon any advice, opinion, statement, recommendation, or other information displayed or distributed through ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties is at your sole risk. ORANGEHOUSE LLC reserves the right, in its sole discretion and without notice, to correct any errors, omissions, or publish any update in any portion of ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties. You further acknowledge and agree that ORANGEHOUSE LLC is not responsible for any materials posted by other users of ORANGEHOUSE LLC’s web, database, and/or mobile application properties.</p>
+
+                        <p><b>Medical Disclaimer.</b> Any and all information and advice that ORANGEHOUSE LLC makes available through its products and services, including through its web, database, e-mail, and mobile application properties, are for general informational purposes only and are not intended as, nor should they ever be considered a substitute for, professional medical or safety advice. Do not use such information or advice for diagnosing or treating any medical or health condition. Always consult a physician or other qualified professional. Never disregard or delay seeking professional medical advice or care because of something you have read on any of ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties. Without limiting any other terms or conditions of this Agreement, ORANGEHOUSE LLC makes no representations or warranties with respect to any information or advice offered or provided through its products and services regarding treatment, action, or application of medication or medical care. Neither ORANGEHOUSE LLC nor any of its affiliates, nor any of their respective officers, directors, representatives, agents, advisors, contractors, and employees, will be liable for any direct, indirect, consequential, special, or any other damages arising therefrom.</p>
+
+                            <p><b>Indemnification.</b> You hereby agree to indemnify, defend, and hold harmless to the fullest extent permitted by law ORANGEHOUSE LLC, and its officers, directors, representatives, agents, advisors, contractors, and employees, from and against any and all losses, liability, damages, costs, and expenses (including reasonable attorneys’ and consultants’ fees and disbursements, costs and expenses of investigation and litigation, and costs and expenses of settlement, judgment, interest and penalties) incurred by ORANGEHOUSE LLC from any claims of any third person (including governmental agencies and authorities) arising out of, based upon, or resulting from: (1) breach or alleged breach of any of your representations, warranties, or obligations set forth in this User Agreement; (2) your reliance upon any advice, opinion, statement, recommendation, or other information displayed or distributed through ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties; or (3) your manufacture, sale, distribution, promotion, advertisement, or use of any products, including claims related to personal injury or property damage. You shall cooperate as fully as reasonably required in the defense of any claim.</p>
+
+                                <p><b>Third-Party Sites.</b> ORANGEHOUSE LLC’s web, database, e-mail, and mobile application properties may contain links and pointers to other sites on the Internet, which may be maintained by third-parties. Such links do not constitute an endorsement by ORANGEHOUSE LLC of any third-party site or any materials contained therein. ORANGEHOUSE LLC does not control, and is not responsible for, the availability, accuracy, privacy policy, or currency of such third-party sites or any information, content, products, or services accessible from such third-party sites.</p>
+
+                                    <p><b>Fee-Shifting, Choice of Law.</b> If you attempt to bring any legal action against ORANGEHOUSE LLC based in any way on its products or services, including ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties, you agree that, in the event you do not prevail or ORANGEHOUSE LLC does prevail, you will reimburse ORANGEHOUSE LLC for any costs and attorneys fees associated with ORANGEHOUSE LLC’s defense of the action. Use of or access to ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties and any claim or dispute relating to ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties shall be governed by the laws of the District of Columbia, without regard to its conflicts of law principles. Any claims, disputes, or litigation arising in connection with the use of or access to ORANGEHOUSE LLC's web, database, e-mail, and/or mobile application properties will be brought solely in the District of Columbia, and you consent to the jurisdiction of such courts.  Use of or access to ORANGEHOUSE LLC’s web, database, e-mail, and/or mobile application properties is unauthorized in any jurisdiction that does not give full effect to all provisions of these terms of service, including without limitation this paragraph. If any provision or portion of these terms and conditions is held in whole or in part to be unenforceable for any reason, the remainder of that provision and of the entire User Agreement will be severable and will remain in effect, to the fullest degree consistent with the intent of this document.</p>
+
+
+    
+    </div>
+    
+</body>
+
+</html>
