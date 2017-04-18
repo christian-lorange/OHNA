@@ -72,6 +72,10 @@
 <icon src="package-assets/iOS/Resources/icons/Icon-50.png" height="50" width="50" platform="ios"/>
 <icon src="package-assets/iOS/Resources/icons/Icon-50@2x.png" height="100" width="100" platform="ios"/>
 <icon src="package-assets/iOS/Resources/icons/Icon-167.png" height="167" width="167" platform="ios"/>
+<icon platform="android" src="package-assets/Android/res/drawable-ldpi/icon.png" density="ldpi" width="36" height="36"/>
+<icon platform="android" src="package-assets/Android/res/drawable-mdpi/icon.png" density="mdpi" width="48" height="48"/>
+<icon platform="android" src="package-assets/Android/res/drawable-hdpi/icon.png" density="hdpi" width="72" height="72"/>
+<icon platform="android" src="package-assets/Android/res/drawable-xhdpi/icon.png" density="xhdpi" width="96" height="96"/>
 <config-file platform="android" parent="/manifest/application" mode="merge"> 
     <activity android:launchMode="singleTop" />
 </config-file>
